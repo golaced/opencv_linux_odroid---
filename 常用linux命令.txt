@@ -1,0 +1,13 @@
+sudo ldconfig  安装完库后使用否则无法找到
+
+
+树莓派串口号 ttyAMA0
+Odroid 串口号  ttySAC0
+
+ls /dev 查看设备
+
+catkin_make
+
+raspi-config 扩展SD卡
+
+df -h  查看SD卡空间
