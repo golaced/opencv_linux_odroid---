@@ -11,3 +11,19 @@ catkin_make
 raspi-config 扩展SD卡
 
 df -h  查看SD卡空间
+
+lsusb  查看USB 设备
+
+dmesg | grep tty 查看串口设备
+
+x11vnc
+
+raspi-config
+
+可以使用以面命令来查看
+ps -ef |grep MF
+
+sudo kill 599
+
+开机启动项
+sudo nano /etc/rc.local

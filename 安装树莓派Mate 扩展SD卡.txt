@@ -1,0 +1,46 @@
+二、安装Ubuntu 14.04 LTS
+
+安装Ubuntu14.04完全遵照的Ubuntu wiki中的步骤。
+下载并写入
+镜像照着wiki中提供的地址下载，下载完后解压.img供写入。
+写入到microSD卡安装树莓派官方提供的软件和步骤。将microSD卡插入读卡器，然后插入电脑；打开Win32DiskImager，选择刚才解压的.img镜像，选择microSD卡的盘符，然后write。
+安装设置Ubuntu
+注意这个Ubuntu镜像并不包含openssh，所以这是必须直连树莓派。
+插上键盘，接上显示器，然后接上电源，树莓派就开始工作了。Ubuntu启动完毕后，登录用户名密码都是ubuntu。
+开启root账户
+对于这个需要折腾的Ubuntu来说，直接用root账户会方便不少。
+1
+sudo passwd root
+然后输入当前用户的密码，就是ubuntu了；然后输入两次root的新密码。
+1
+su root
+输入root密码就进入root账户啦。
+使用全部分区空间
+此时Ubuntu并没有利用到全部SD卡的空间，需要手动设置。
+1
+fdisk /dev/mmcblk0
+删除第二分区：按d，再按2
+重建第二分区：按n，再按p，再按2，再按enter，再按enter，再按w
+然后重启Ubuntu
+1
+reboot
+输入
+1
+resize2fs /dev/mmcblk0p2
+这样Ubuntu就使用到了全部SD卡的空间。
+更新源
+这是必须的步骤了
+1
+2
+apt-get update
+apt-get upgrade
+设置SWAP
+此Ubuntu本身没有SWAP，需要手动建立，不过这里有个自动完成SWAP设置的软件，此软件会默认设置RAM两倍大小的SWAP分区，所以树莓派中会生成2G大小的SWAP分区。
+1
+apt-get install dphys-swapfile
+安装并设置完成后，SWAP即设置完成。
+安装SSH服务器
+这个是必装的了，允许SSH访问
+1
+apt-get install openssh-server
+这样就算初始化设置完成了，因为这个镜像相当于是Ubuntu的最小镜像，所以很多软件或依赖都没有安装，所以可能很多apt-get install都会顺带安装一大堆依赖。
