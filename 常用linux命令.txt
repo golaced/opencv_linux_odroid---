@@ -11,6 +11,8 @@ catkin_make
 raspi-config 扩展SD卡
 
 df -h  查看SD卡空间
+sudo ./backup.sh 树莓派备份文件
+sudo chmod 777 genimg.sh 给文件添加系统权限
 
 lsusb  查看USB 设备
 
@@ -27,3 +29,5 @@ sudo kill 599
 
 开机启动项
 sudo nano /etc/rc.local
+
+sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo -j1

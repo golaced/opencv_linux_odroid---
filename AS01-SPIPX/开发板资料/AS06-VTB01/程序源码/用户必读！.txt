@@ -1,0 +1,22 @@
+【开发环境】：
+
+1、开发板上的单片机型号是STM8L101F3P6，我司程序源码采用的开发环境为STVP；
+2、STVP软件包下载地址：http://www.ashining.com.cn/tools/stvp_stm8.zip
+
+【成都泽耀科技有限公司】
+
+专业无线解决方案  专业无线模块研发
+各种2.4G、915M、868M、780M、490M、433M、315M、230M、170M无线模块研发
+
+【官方网站】：www.ashining.com                 【在线商城】：https://zeyaotech.taobao.com
+【公司电话】：028-64891123、028-64891129       【公司传真】：分机807
+【销售经理】：李小姐  13352986713              【销售咨询】：sales@ashining.com
+【官方微信】：cdzeyao                          【技术支持】：support@ashining.com 
+【公司地址】：四川省 成都市 高新西区 西芯大道3号国腾科技园10号楼2楼
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+From 7e9c381043c9c33d594b66fad853bf69df044769 Mon Sep 17 00:00:00 2001
+From: Paul Mathieu <pmathieu@willowgarage.com>
+Date: Tue, 12 Mar 2013 13:28:23 -0700
+Subject: [PATCH] fixed arm build
+
+---
+ src/collada_urdf.cpp |    7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/src/collada_urdf.cpp b/src/collada_urdf.cpp
+index acebfb2..1d4beb6 100644
+--- a/src/collada_urdf.cpp
++++ b/src/collada_urdf.cpp
+@@ -68,6 +68,13 @@
+ #include <assimp/IOSystem.hpp>
+ #include <assimp/Importer.hpp>
+ #include <assimp/postprocess.h>
++#  ifdef __arm__                 // fix for ARM build
++#include <strings.h>
++bool Assimp::IOSystem::ComparePaths(const char *p1, const char *p2) const
++{
++    return !::strcasecmp(p1, p2);
++}
++#  endif
+ #else
+ #include <assimp.hpp>
+ #include <aiScene.h>
+-- 
+1.7.9.5
+
